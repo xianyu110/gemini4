@@ -1,10 +1,16 @@
-# Gemini 3.1 Pro 国内使用完全指南：5种方式，总有一种适合你
+# Gemini 4 国内使用完全指南：5种方式，总有一种适合你
 
-Google 刚发布了 Gemini 3.1 Pro，性能翻倍，价格不变。
+截至 2026 年 11 月 14 日，Google 官方最新一代是 **Gemini 4**，三个稳定模型都已在 Gemini API 上线：最强推理是 **Gemini 4 Carbon**（`gemini-4-carbon`，11 月 10 日发布），同级但更快、每轮更省 token 的是 **Gemini 4 Argon**（`gemini-4-argon`，10 月 13 日发布），日常编程和智能体优先用 **Gemini 4 Hydrogen**（`gemini-4-hydrogen`，11 月 12 日发布，官方免费层可用）。三个模型都是 100 万 token 上下文。
 
-但很多人问：国内怎么用？
+上一世代里，**Gemini 3.8 Flash** 仍是主力 Flash，高吞吐用 **Gemini 3.5 Flash-Lite**；**Gemini 3.1 Pro Preview** 仍可用，但官方 ID 是 `gemini-3.1-pro-preview`，不再是这篇指南原先写的最新旗舰。**Gemini 3 Pro Preview**（`gemini-3-pro-preview`）和 **Gemini 2.0 Flash** 已关停；**Gemini 2.5 Pro / 2.5 Flash** 已弃用，并将从 2026 年 12 月 1 日起分别自动转到 `gemini-3.8-flash` / `gemini-3.5-flash-lite`。
 
-我整理了5种方式，从简单到专业，总有一种适合你。
+下面的 5 种国内使用方式没有变，变的是你该选哪个模型。
+
+资料来源：[官方模型列表](https://aistudio.google.com/docs/models)、[定价](https://aistudio.google.com/docs/pricing)、[停用说明](https://aistudio.google.com/docs/deprecations)。
+
+![Gemini 4 官方主力：Carbon、Argon、Hydrogen](assets/gemini4-lineup.png)
+
+*示意图为本仓库原创，仅用于说明选型。模型名与官方 ID 来自 [Google AI Studio 模型文档](https://aistudio.google.com/docs/models)（2026-11-14）。*
 
 ## 国内直连三入口（速查）
 
@@ -15,6 +21,25 @@ Google 刚发布了 Gemini 3.1 Pro，性能翻倍，价格不变。
 | API / 开发接入 | https://tryallapi.com/ | 国内 API 中转（MomoAPI），按量调用 Gemini |
 | 网页日常对话 | https://trygpt.asia/list/#/home | 镜像站，注册即聊，无需魔法 |
 | 多模型一站聊 | http://trymodel.chat/ | Gemini + ChatGPT + Claude + Grok 聚合 |
+
+## 最新官方模型速查
+
+按 2026 年 11 月 14 日的官方文档整理，只列日常最常用的文本模型。价格为 Gemini Developer API 付费层、每 100 万 tokens 的 Standard 标价；输出价格含思考（thinking）tokens。Carbon / Argon 的促销价到 2026 年 11 月 30 日截止。
+
+![怎么选模型：Hydrogen、Carbon、Argon，以及 3.8 Flash 与 3.5 Flash-Lite](assets/gemini4-choose.png)
+
+*示意图为本仓库原创。选型说明与官方 ID 来自 Google AI Studio 模型、定价和停用文档（2026-11-14）。*
+
+| 模型 | 官方 ID | 适合做什么 | 付费层输入 / 输出 | 备注 |
+|------|---------|------------|-------------------|------|
+| Gemini 4 Carbon | `gemini-4-carbon` | 复杂工程、科研、高难度推理、多智能体 | $2 / $10（12 月 1 日起 $4 / $20） | 官方最强；无免费层 |
+| Gemini 4 Argon | `gemini-4-argon` | 同级推理，但更快、每轮更省 token | $2 / $10（12 月 1 日起 $4 / $20） | 无免费层 |
+| Gemini 4 Hydrogen | `gemini-4-hydrogen` | 日常编程、智能体、大多数开发任务 | $1.50 / $7.50 | 官方免费层在配额内免费，优先推荐 |
+| Gemini 3.8 Flash | `gemini-3.8-flash` | 上一世代主力 Flash，长程工程和智能体 | $0.75 / $3.75（2027 年 1 月 1 日起 $1.50 / $7.50） | 免费层在配额内免费 |
+| Gemini 3.5 Flash-Lite | `gemini-3.5-flash-lite` | 高吞吐、成本优先 | $0.30 / $2.50 | 2.5 Flash 将在 12 月 1 日转到此模型 |
+| Gemini 3.1 Pro Preview | `gemini-3.1-pro-preview` | 仍可用的上一代 Pro | $2 / $12（提示 ≤20 万 tokens）；更长上下文 $4 / $18 | 不是最新旗舰；不要写成 `gemini-3.1-pro` |
+
+已关停、不要再选：`gemini-3-pro-preview`（Gemini 3 Pro Preview）、`gemini-2.0-flash`。图片生成看 Nano Banana 2.1（`gemini-nano-banana-2.1`），实时语音看 Gemini 3.8 Live（`gemini-3.8-live`），这些是另一条线，不是对话主力。
 
 下面是完整 5 种方式详解（含官方与订阅路径）。
 
@@ -49,11 +74,14 @@ Google 刚发布了 Gemini 3.1 Pro，性能翻倍，价格不变。
 
 **第三步：选择模型**
 
-注册后，可以选择：
-- Gemini 3.1 Pro（最新，最强）
-- Gemini 3 Pro
-- Gemini 3 Deep Think
-- Gemini 2.0 Flash
+注册后，按官方最新名单优先选：
+- Gemini 4 Hydrogen（日常默认，推荐先用这个）
+- Gemini 4 Argon（要更快、更省 token 的 Gemini 4）
+- Gemini 4 Carbon（最强推理）
+- Gemini 3.8 Flash（上一世代主力 Flash）
+- Gemini 3.5 Flash-Lite（高吞吐、更便宜）
+
+不要再选已关停的 Gemini 3 Pro Preview、Gemini 2.0 Flash。若平台仍列出 Gemini 3.1 Pro，对应官方 ID 是 `gemini-3.1-pro-preview`，它还在，但已不是最新旗舰。
 
 **第四步：开始使用**
 
@@ -121,9 +149,8 @@ Google 刚发布了 Gemini 3.1 Pro，性能翻倍，价格不变。
 **第四步：选择模型**
 
 可以使用：
-- Gemini 3.1 Pro
-- ChatGPT-4
-- Claude Opus
+- Gemini 4 Hydrogen / Argon / Carbon（以平台实际列出的官方模型名为准）
+- ChatGPT、Claude 等其他主流模型
 - 其他主流 AI 模型
 
 ### 适合谁
@@ -312,8 +339,8 @@ import google.generativeai as genai
 # 配置 API Key
 genai.configure(api_key='your-api-key')
 
-# 创建模型
-model = genai.GenerativeModel('gemini-3.1-pro')
+# 创建模型（日常推荐 Hydrogen；最强推理改用 gemini-4-carbon）
+model = genai.GenerativeModel('gemini-4-hydrogen')
 
 # 生成内容
 response = model.generate_content('Hello!')
@@ -332,19 +359,16 @@ print(response.text)
 
 ### 成本
 
-官方 API 价格：
+官方 API 价格（Gemini Developer API 付费层、Standard，每 100 万 tokens；输出含思考 tokens）：
 
-| 使用量 | 输入价格 | 输出价格 |
-|--------|---------|---------|
-| ≤20万 tokens | $2/百万 | $12/百万 |
-| >20万 tokens | $4/百万 | $18/百万 |
+| 模型 | 输入价格 | 输出价格 | 说明 |
+|------|---------|---------|------|
+| Gemini 4 Carbon / Argon | $2（至 2026-11-30），此后 $4 | $10，此后 $20 | 无免费层 |
+| Gemini 4 Hydrogen | $1.50 | $7.50 | 免费层在配额内免费 |
+| Gemini 3.8 Flash | $0.75（至 2026-12-31），此后 $1.50 | $3.75，此后 $7.50 | 免费层在配额内免费 |
+| Gemini 3.1 Pro Preview | $2 / $4（提示 ≤20 万 / >20 万 tokens） | $12 / $18 | 上一代 Pro，仍可用 |
 
-**实际成本**（以我的使用量为例）：
-
-- 每天 100 次对话
-- 平均每次 2000 tokens
-- 一个月 6M tokens
-- 成本：约 $144（¥1,036）
+完整价目以官方定价页为准：https://aistudio.google.com/docs/pricing
 
 **第三方 API 价格**：
 
@@ -464,7 +488,7 @@ A：如果只是测试，用镜像站或 AI Studio。如果要集成到应用，
 
 ### Q8：镜像站支持所有模型吗？
 
-A：支持。包括 Gemini 3.1 Pro、3 Pro、3 Deep Think、2.0 Flash 等。
+A：主流镜像站通常会跟官方模型更新，但要以页面实际可选名单为准。当前官方主力是 Gemini 4 Hydrogen / Argon / Carbon，以及 3.8 Flash、3.5 Flash-Lite。已关停的 3 Pro Preview、2.0 Flash 不应再作为可选项。
 
 ### Q9：ChatGPT Plus 镜像站和 Gemini 镜像站有什么区别？
 
@@ -480,10 +504,10 @@ A：对于轻度使用和测试够用，重度使用建议选择其他方式。
 
 不同任务，用不同模型：
 
-- **Gemini 3.1 Pro**：复杂任务、编程、数学
-- **Gemini 3 Pro**：日常对话、写作
-- **Gemini 3 Deep Think**：深度推理、算法
-- **Gemini 2.0 Flash**：快速响应、简单任务
+- **Gemini 4 Hydrogen**：日常编程、写作、智能体，多数情况先用这个
+- **Gemini 4 Argon**：复杂任务里想要比 Carbon 更快、更省 token
+- **Gemini 4 Carbon**：最难的工程、科研和深度推理
+- **Gemini 3.8 Flash / 3.5 Flash-Lite**：成本和速度优先，或高吞吐场景
 
 ### 技巧2：优化 Prompt
 
@@ -559,13 +583,15 @@ A：对于轻度使用和测试够用，重度使用建议选择其他方式。
 
 ## 总结
 
-Gemini 3.1 Pro 在国内使用，有5种方式：
+官方主力已经换成 Gemini 4：日常和开发优先 **Hydrogen**，要最强推理用 **Carbon**，要在质量和成本之间折中用 **Argon**。成本和速度优先可以继续用 **3.8 Flash** 或 **3.5 Flash-Lite**。不要再用已关停的 **2.0 Flash**、**3 Pro Preview**，也不要把旧的 `gemini-3.1-pro` 当成官方模型 ID。
+
+国内使用路径还是这 5 种：
 
 1. **Gemini 镜像站**：最简单，完全免费，推荐所有人
 2. **ChatGPT Plus 镜像站**：一站式服务，支持多个 AI 模型
-3. **Google AI Studio**：官方免费，适合开发测试
+3. **Google AI Studio**：官方免费，适合开发测试（Hydrogen、3.8 Flash 等在官方免费层配额内可用；Carbon / Argon 官方无免费层）
 4. **官方订阅**：最稳定，需要付费，适合企业
-5. **API 调用**：最灵活，按量付费，适合开发者
+5. **API 调用**：最灵活，按量付费，适合开发者；请使用官方 ID，例如 `gemini-4-hydrogen`
 
 我自己用的是 Gemini 镜像站，因为：
 - 完全免费
@@ -573,7 +599,7 @@ Gemini 3.1 Pro 在国内使用，有5种方式：
 - 功能完整
 - 速度快
 
-如果你还没试过 Gemini 3.1 Pro，建议从 Gemini 镜像站开始。
+如果你还没试过 Gemini 4，建议从 Gemini 镜像站开始，先选 Hydrogen。
 
 注册即用，限时免费。
 

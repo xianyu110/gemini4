@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Gemini 3.1 Pro 国内使用完全指南。5 种方式对比，帮助你按成本、门槛和需求快速选择。">
-  <title>Gemini 3.1 Pro 国内使用指南</title>
+  <meta name="description" content="Gemini 4 国内使用完全指南。按 2026 年 11 月 14 日官方模型名单更新，覆盖 Carbon / Argon / Hydrogen，以及 5 种国内使用方式。">
+  <title>Gemini 4 国内使用指南</title>
   <style>
     :root {
       --bg: #1a1033;
@@ -50,6 +50,14 @@
 
     a:hover {
       color: var(--yellow);
+    }
+
+    code {
+      font-family: inherit;
+      color: var(--yellow);
+      background: rgba(0, 0, 0, 0.25);
+      padding: 0 4px;
+      border: 2px solid var(--line);
     }
 
     img {
@@ -466,9 +474,10 @@
   <header class="topbar">
     <div class="wrap topbar-inner">
       <div class="brand">
-        <span>Gemini 3.1 Pro</span>
+        <span>Gemini 4</span>
       </div>
       <nav class="nav">
+        <a href="#models">最新模型</a>
         <a href="#methods">5 种方式</a>
         <a href="#compare">方式对比</a>
         <a href="#recommend">我的推荐</a>
@@ -484,11 +493,11 @@
         <div>
           <div class="hero-tags">
             <span class="tag">国内使用</span>
+            <span class="tag">Gemini 4</span>
             <span class="tag">5 种方式</span>
-            <span class="tag">快速选择指南</span>
           </div>
-          <h1>Gemini 3.1 Pro<br>国内使用完全指南</h1>
-          <p>Google 刚发布 Gemini 3.1 Pro，性能翻倍，价格不变。问题不是能不能用，而是国内用户到底该怎么选。这里把 5 种方式放在一起，按成本、门槛和适用人群直接对比。</p>
+          <h1>Gemini 4<br>国内使用完全指南</h1>
+          <p>截至 2026 年 11 月 14 日，Google 官方最新一代是 Gemini 4：最强推理用 Carbon（<code>gemini-4-carbon</code>，11 月 10 日发布），更快更省用 Argon（<code>gemini-4-argon</code>，10 月 13 日发布），日常编程和智能体优先用 Hydrogen（<code>gemini-4-hydrogen</code>，11 月 12 日发布，官方免费层可用）。三个模型都是 100 万 token 上下文。3.8 Flash 仍是上一世代主力 Flash；3.1 Pro Preview 还在，但已不是最新旗舰。3 Pro Preview 和 2.0 Flash 已关停。下面的 5 种国内使用方式没有变，变的是你该选哪个模型。</p>
           <div class="cta-row">
             <a class="cta" href="#methods">查看 5 种方式</a>
             <a class="cta alt" href="#compare">直接看对比表</a>
@@ -511,10 +520,75 @@
           </div>
           <div class="mini-card pixel-box">
             <strong>快速结论</strong>
-            <p>如果你只是想马上开始，优先看方式一；如果你要多模型切换，看方式二；如果你是开发者并且要官方 API，直接看方式三和方式五。</p>
+            <p>模型先选 Gemini 4 Hydrogen；要最强用 Carbon，要更快更省用 Argon。用法上：想马上开始看方式一；要多模型切换看方式二；要官方 API 看方式三和方式五。</p>
           </div>
         </div>
       </div>
+    </section>
+
+    <section id="models" class="wrap">
+      <div class="section-head">
+        <h2 class="section-title">最新官方模型</h2>
+        <p class="section-lead">按 2026 年 11 月 14 日官方文档整理。价格为 Gemini Developer API 付费层、每 100 万 tokens 的 Standard 标价；输出含思考 tokens。Carbon / Argon 促销价到 2026 年 11 月 30 日截止。来源：<a href="https://aistudio.google.com/docs/models" target="_blank" rel="noreferrer">模型列表</a>、<a href="https://aistudio.google.com/docs/pricing" target="_blank" rel="noreferrer">定价</a>、<a href="https://aistudio.google.com/docs/deprecations" target="_blank" rel="noreferrer">停用说明</a>。</p>
+      </div>
+      <div class="table-wrap pixel-box">
+        <table>
+          <thead>
+            <tr>
+              <th>模型</th>
+              <th>官方 ID</th>
+              <th>适合做什么</th>
+              <th>付费层输入 / 输出</th>
+              <th>备注</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Gemini 4 Carbon</td>
+              <td><code>gemini-4-carbon</code></td>
+              <td>复杂工程、科研、高难度推理、多智能体</td>
+              <td>$2 / $10（12 月 1 日起 $4 / $20）</td>
+              <td>官方最强；无免费层</td>
+            </tr>
+            <tr>
+              <td>Gemini 4 Argon</td>
+              <td><code>gemini-4-argon</code></td>
+              <td>同级推理，但更快、每轮更省 token</td>
+              <td>$2 / $10（12 月 1 日起 $4 / $20）</td>
+              <td>无免费层</td>
+            </tr>
+            <tr>
+              <td>Gemini 4 Hydrogen</td>
+              <td><code>gemini-4-hydrogen</code></td>
+              <td>日常编程、智能体、大多数开发任务</td>
+              <td>$1.50 / $7.50</td>
+              <td>官方免费层在配额内免费，优先推荐</td>
+            </tr>
+            <tr>
+              <td>Gemini 3.8 Flash</td>
+              <td><code>gemini-3.8-flash</code></td>
+              <td>上一世代主力 Flash，长程工程和智能体</td>
+              <td>$0.75 / $3.75（2027 年 1 月 1 日起 $1.50 / $7.50）</td>
+              <td>免费层在配额内免费</td>
+            </tr>
+            <tr>
+              <td>Gemini 3.5 Flash-Lite</td>
+              <td><code>gemini-3.5-flash-lite</code></td>
+              <td>高吞吐、成本优先</td>
+              <td>$0.30 / $2.50</td>
+              <td>2.5 Flash 将在 12 月 1 日转到此模型</td>
+            </tr>
+            <tr>
+              <td>Gemini 3.1 Pro Preview</td>
+              <td><code>gemini-3.1-pro-preview</code></td>
+              <td>仍可用的上一代 Pro</td>
+              <td>$2 / $12（提示 ≤20 万 tokens）；更长上下文 $4 / $18</td>
+              <td>不是最新旗舰；不要写成 gemini-3.1-pro</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="section-lead" style="margin-top:14px;">已关停、不要再选：<code>gemini-3-pro-preview</code>、<code>gemini-2.0-flash</code>。图片生成看 Nano Banana 2.1（<code>gemini-nano-banana-2.1</code>），实时语音看 Gemini 3.8 Live（<code>gemini-3.8-live</code>）。</p>
     </section>
 
     <section id="methods" class="wrap">
@@ -613,14 +687,14 @@
 
         <article class="code-box pixel-box">
           <h3>API 示例</h3>
-          <p>如果你最后选的是开发者路线，可以参考这段示例快速开始：</p>
+          <p>如果你最后选的是开发者路线，日常推荐官方 ID <code>gemini-4-hydrogen</code>；最强推理改用 <code>gemini-4-carbon</code>。不要再写已过时的 <code>gemini-3.1-pro</code>。</p>
           <pre><code>import google.generativeai as genai
 
 # 配置 API Key
 genai.configure(api_key='your-api-key')
 
 # 创建模型
-model = genai.GenerativeModel('gemini-3.1-pro')
+model = genai.GenerativeModel('gemini-4-hydrogen')
 
 # 生成内容
 response = model.generate_content('Hello!')
@@ -776,7 +850,7 @@ print(response.text)</code></pre>
       <div class="tip-grid">
         <article class="tip-card pixel-box">
           <h3>技巧 1：选对模型</h3>
-          <p>Gemini 3.1 Pro 适合复杂任务、编程、数学；Gemini 3 Pro 适合日常对话和写作；Deep Think 适合深度推理；2.0 Flash 适合快速响应。</p>
+          <p>Gemini 4 Hydrogen 适合日常编程、写作和智能体；Argon 适合要更快、更省 token 的复杂任务；Carbon 适合最难的工程和深度推理；成本和速度优先用 3.8 Flash 或 3.5 Flash-Lite。已关停的 2.0 Flash、3 Pro Preview 不要再选。</p>
         </article>
         <article class="tip-card pixel-box">
           <h3>技巧 2：Prompt 要具体</h3>
@@ -810,8 +884,9 @@ print(response.text)</code></pre>
   <footer class="footer wrap">
     <div class="footer-panel pixel-box">
       <h2>最后结论</h2>
-      <p>如果你是普通用户，优先选镜像站；如果你需要多模型协作，选多模型平台；如果你是开发者，优先看 AI Studio 和 API 调用。</p>
-      <p class="muted">核心原则很简单：先选最低门槛、最符合自己需求的方案，再决定是否升级到更专业的路径。</p>
+      <p>官方主力已经换成 Gemini 4：日常和开发优先 Hydrogen，要最强推理用 Carbon，要在质量和成本之间折中用 Argon。成本和速度优先可以继续用 3.8 Flash 或 3.5 Flash-Lite。不要再用已关停的 2.0 Flash、3 Pro Preview，也不要把旧的 <code>gemini-3.1-pro</code> 当成官方模型 ID。</p>
+      <p>使用路径没变：普通用户优先选镜像站；需要多模型协作，选多模型平台；开发者优先看 AI Studio 和 API 调用，API 请使用官方 ID，例如 <code>gemini-4-hydrogen</code>。</p>
+      <p class="muted">资料来自 2026 年 11 月 14 日的官方模型列表、定价和停用说明。核心原则很简单：先选对模型，再选最低门槛、最符合自己需求的使用方式。</p>
     </div>
   </footer>
 </body>

@@ -12,15 +12,17 @@
 
 *示意图为本仓库原创，仅用于说明选型。模型名与官方 ID 来自 [Google AI Studio 模型文档](https://aistudio.google.com/docs/models)（2026-11-14）。*
 
-## 国内直连三入口（速查）
+## 5 种方式（速查）
 
-不想看长文？先收藏这三个：
+不想看长文？先按需求收藏这五个入口：
 
-| 场景 | 入口 | 说明 |
-|------|------|------|
-| API / 开发接入 | https://tryallapi.com/ | 国内 API 中转（MomoAPI），按量调用 Gemini |
-| 网页日常对话 | https://trygpt.asia/list/#/home | 镜像站，注册即聊，无需魔法 |
-| 多模型一站聊 | http://trymodel.chat/ | Gemini + ChatGPT + Claude + Grok 聚合 |
+| 方式 | 场景 | 入口 | 说明 |
+|------|------|------|------|
+| 方式一：镜像站 | 网页日常对话 | https://trygpt.asia/list/#/home | 国内直连，注册即聊，限时免费；备用 https://gemini-ultra.top/list/#/home |
+| 方式二：多模型平台 | 多模型一站聊 | https://chatgpt-plus.top/list/#/home | 国内直连，Gemini / ChatGPT / Claude 等，按量充值；也可看 http://trymodel.chat/ |
+| 方式三：AI Studio | 官方免费网页 / API | https://aistudio.google.com | 官方免费有配额，需魔法上网和 Google 账号 |
+| 方式四：官方订阅 | 官方完整服务 | https://gemini.google.com | 需魔法上网和外币卡，约 $20/月 |
+| 方式五：API 调用 | 开发接入 | https://tryallapi.com/ | 国内 API 中转，按量调用；也可走官方 AI Studio 的 API Key |
 
 ## 最新官方模型速查
 
@@ -63,7 +65,6 @@
 - 地址 1：https://trygpt.asia/list/#/home（推荐）
 - 地址 2：https://gemini-ultra.top/list/#/home（备用）
 
-![Gemini 镜像站](https://upload.maynor1024.live/file/1771546698300_image-20260220081810246.png)
 
 **第二步：注册账号**
 

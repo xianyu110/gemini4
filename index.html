@@ -428,6 +428,32 @@
       color: var(--muted);
     }
 
+    figure.guide-fig {
+      margin: 0;
+    }
+
+    figure.guide-fig img {
+      width: 100%;
+      height: auto;
+      border: 4px solid var(--line);
+      box-shadow: 8px 8px 0 var(--shadow);
+      background: var(--bg-panel);
+    }
+
+    figure.guide-fig figcaption {
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .hero-figure {
+      margin-top: 22px;
+    }
+
+    .models-figure {
+      margin: 0 0 18px;
+    }
+
     @media (max-width: 960px) {
       .hero-panel,
       .methods,
@@ -524,6 +550,11 @@
           </div>
         </div>
       </div>
+      <!-- Original diagram; official names/IDs from Google AI Studio docs, 2026-11-14. -->
+      <figure class="guide-fig hero-figure">
+        <img src="assets/gemini4-lineup.png" width="1600" height="820" alt="Gemini 4 官方主力：Carbon（gemini-4-carbon）、Argon（gemini-4-argon）、Hydrogen（gemini-4-hydrogen）">
+        <figcaption>示意图为本仓库原创，仅用于说明选型。模型名与官方 ID 来自 <a href="https://aistudio.google.com/docs/models" target="_blank" rel="noreferrer">Google AI Studio 模型文档</a>（2026-11-14）。</figcaption>
+      </figure>
     </section>
 
     <section id="models" class="wrap">
@@ -531,6 +562,11 @@
         <h2 class="section-title">最新官方模型</h2>
         <p class="section-lead">按 2026 年 11 月 14 日官方文档整理。价格为 Gemini Developer API 付费层、每 100 万 tokens 的 Standard 标价；输出含思考 tokens。Carbon / Argon 促销价到 2026 年 11 月 30 日截止。来源：<a href="https://aistudio.google.com/docs/models" target="_blank" rel="noreferrer">模型列表</a>、<a href="https://aistudio.google.com/docs/pricing" target="_blank" rel="noreferrer">定价</a>、<a href="https://aistudio.google.com/docs/deprecations" target="_blank" rel="noreferrer">停用说明</a>。</p>
       </div>
+      <!-- Original diagram; official names/IDs from Google AI Studio docs, 2026-11-14. -->
+      <figure class="guide-fig models-figure">
+        <img src="assets/gemini4-choose.png" width="1600" height="940" alt="怎么选模型：日常用 gemini-4-hydrogen，最强用 gemini-4-carbon，更快更省用 gemini-4-argon，成本优先用 gemini-3.8-flash 或 gemini-3.5-flash-lite">
+        <figcaption>示意图为本仓库原创。选型说明与官方 ID 来自 Google AI Studio 模型、定价和停用文档（2026-11-14）。</figcaption>
+      </figure>
       <div class="table-wrap pixel-box">
         <table>
           <thead>

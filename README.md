@@ -8,6 +8,10 @@
 
 资料来源：[官方模型列表](https://aistudio.google.com/docs/models)、[定价](https://aistudio.google.com/docs/pricing)、[停用说明](https://aistudio.google.com/docs/deprecations)。
 
+![Gemini 4 官方主力：Carbon、Argon、Hydrogen](assets/gemini4-lineup.png)
+
+*示意图为本仓库原创，仅用于说明选型。模型名与官方 ID 来自 [Google AI Studio 模型文档](https://aistudio.google.com/docs/models)（2026-11-14）。*
+
 ## 国内直连三入口（速查）
 
 不想看长文？先收藏这三个：
@@ -21,6 +25,10 @@
 ## 最新官方模型速查
 
 按 2026 年 11 月 14 日的官方文档整理，只列日常最常用的文本模型。价格为 Gemini Developer API 付费层、每 100 万 tokens 的 Standard 标价；输出价格含思考（thinking）tokens。Carbon / Argon 的促销价到 2026 年 11 月 30 日截止。
+
+![怎么选模型：Hydrogen、Carbon、Argon，以及 3.8 Flash 与 3.5 Flash-Lite](assets/gemini4-choose.png)
+
+*示意图为本仓库原创。选型说明与官方 ID 来自 Google AI Studio 模型、定价和停用文档（2026-11-14）。*
 
 | 模型 | 官方 ID | 适合做什么 | 付费层输入 / 输出 | 备注 |
 |------|---------|------------|-------------------|------|
